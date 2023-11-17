@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { IoLogoTwitter } from "react-icons/io";
+import { TbBrandDiscordFilled } from "react-icons/tb";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -25,21 +27,24 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex flex-row bg-transparent items-center justify-evenly py-3 px-12 fixed top-0 w-full z-50${
+        className={`flex flex-row bg-transparent items-center justify-evenly py-5 px-12 fixed top-0 w-full text-white z-50${
           sticky ? "shadow-xl !bg-black" : ""
         }`}>
         <Link href='/'>
           <p onClick={goTop} className='text-2xl font-bold'>
-            COIN-CRYPTO
+            COINCRYPTO
           </p>
         </Link>
-        <ul className='w-96  flex flex-row justify-around font-bold'>
+        <ul className='w-96  flex flex-row justify-around text-lg'>
           <Link href='#'>Home</Link>
           <Link href='#'>Market</Link>
           <Link href='#'>Choose Us</Link>
           <Link href='#'>Join</Link>
         </ul>
-        <div>twitter</div>
+        <div className='flex flex-row items-center justify-center text-xl cursor-pointer gap-x-4'>
+          <IoLogoTwitter />
+          <TbBrandDiscordFilled />
+        </div>
       </nav>
     </>
   );

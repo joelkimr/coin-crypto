@@ -28,14 +28,14 @@ const Navbar = () => {
     <>
       <nav
         className={`flex flex-row bg-transparent items-center justify-evenly py-5 px-12 fixed top-0 w-full text-white z-50${
-          sticky ? "shadow-xl !bg-black" : ""
+          sticky ? "shadow-3xl !bg-secondary" : ""
         }`}>
         <Link href='/'>
-          <p onClick={goTop} className='text-2xl font-bold'>
+          <p onClick={goTop} className='text-3xl font-bold'>
             COINCRYPTO
           </p>
         </Link>
-        <ul className='w-96  flex flex-row justify-around text-lg'>
+        <ul className='w-96  flex flex-row justify-around text-lg font-bold'>
           <Link href='#'>Home</Link>
           <Link href='#'>Market</Link>
           <Link href='#'>Choose Us</Link>

@@ -35,49 +35,75 @@ const Hero = () => {
 
   return (
     <div>
-    <div className='w-full h-screen bg-gradient-to-t from-secondary to-primary'>
-      <Navbar />
-         <div className='w-auto h-full flex flex-col items-center justify-center space-y-16'>
-        <div className='flex flex-row justify-center items-center'>
-          <Image src={btc} width={80} height={80} alt='floating-coin' />
-          <div className='text-center uppercase flex flex-col'>
-            <div>
-              <p className='text-white text-8xl font-bold'>track and trade</p>
+      <div className='w-full h-screen bg-gradient-to-t from-secondary to-primary'>
+        <Navbar />
+        <div className='w-auto h-full flex flex-col items-center justify-center space-y-16 md:pt-0 pt-20'>
+          <div className='flex flex-row justify-center items-center'>
+            <Image
+              src={btc}
+              width={80}
+              height={80}
+              alt='floating-coin'
+              className='md:block hidden'
+            />
+            <div className='text-center uppercase flex flex-col'>
+              <div>
+                <p className='text-white lg:text-7xl text-5xl font-bold'>
+                  track and trade
+                </p>
+              </div>
+              <div>
+                <p className='lg:text-7xl md:text-5xl text-6xl p-4 font-bold from-first to-title bg-gradient-to-r bg-clip-text text-transparent'>
+                  crypto currencies
+                </p>
+              </div>
             </div>
-            <div>
-              <p className='text-8xl p-4 font-bold from-first to-title bg-gradient-to-r bg-clip-text text-transparent'>
-                crypto currencies
-              </p>
-            </div>
+            <Image
+              src={eth}
+              width={80}
+              height={80}
+              alt='floating-coin'
+              className='md:block hidden'
+            />
           </div>
-          <Image src={eth} width={80} height={80} alt='floating-coin' />
+          <a
+            href='#'
+            className='text-[1.5rem] w-[15rem] h-[4rem] text-center pt-2 bg-gradient-to-t from-first to-title text-white rounded-full transition md:hidden block font-bold'>
+            See Prices
+          </a>
+          <div
+            onLoad={() => setCoinsLoad(false)}
+            className='flex-row gap-x-28 md:block hidden'>
+            {coinsLoad && <span className='loader'></span>}
+            {data.map((item) => (
+              <Link href={`/coin/${item.id}`} key={item.id}>
+                <img
+                  src={item?.image}
+                  alt={item?.name}
+                  width={100}
+                  height={100}
+                  className='ml-5'
+                />
+                <p className='text-2xl font-bold text-white mt-4'>
+                  {item?.name}
+                  <span
+                    className={
+                      "  " +
+                      (item.price_change_percentage_24h <= 0
+                        ? "text-red"
+                        : "text-green")
+                    }>
+                    {item?.price_change_percentage_24h?.toFixed(2) + "%"}
+                  </span>
+                </p>
+                <p className='text-2xl text-white text-center font-bold'>
+                  {"$ " + numberWithCommas(item.current_price?.toFixed(2))}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
-        
-      <div onLoad={() => setCoinsLoad(false)} className='flex flex-row gap-x-28'>
-        {coinsLoad}
-        {data.map((item) => (
-          <Link href={`/coin/${item.id}`} key={item.id}>
-            <img src={item?.image} alt={item?.name} width={100} height={100} className='ml-5'/>
-            <p className='text-2xl font-bold text-white mt-4'>
-              {item?.name}
-              <span
-                className={
-                  "  " +
-                  (item.price_change_percentage_24h <= 0
-                    ? "text-red"
-                    : "text-green")
-                }>
-                {item?.price_change_percentage_24h?.toFixed(2) + "%"}
-              </span>
-            </p>
-            <p className='text-2xl text-white text-center font-bold'>
-              {"$ " + numberWithCommas(item.current_price?.toFixed(2))}
-            </p>
-          </Link>
-        ))}
       </div>
-      </div>
-    </div>
     </div>
   );
 };

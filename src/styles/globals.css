@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+span {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: purple;
+}
 
 *::-webkit-scrollbar {
     width: 12px;

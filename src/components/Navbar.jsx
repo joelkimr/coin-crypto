@@ -5,6 +5,7 @@ import { TbBrandDiscordFilled } from "react-icons/tb";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 10) {
@@ -24,10 +25,14 @@ const Navbar = () => {
     });
   };
 
+  const openMobile = () => {
+    setMobile(!mobile);
+  };
+
   return (
     <>
       <nav
-        className={`flex flex-row bg-transparent items-center justify-evenly py-5 px-12 fixed top-0 w-full text-white z-50${
+        className={`flex flex-row bg-transparent items-center md:justify-evenly justify-between py-5 px-12 fixed top-0 w-full text-white z-50${
           sticky ? "shadow-3xl !bg-secondary" : ""
         }`}>
         <Link href='/'>
@@ -35,7 +40,7 @@ const Navbar = () => {
             COINCRYPTO
           </p>
         </Link>
-        <ul className='w-96  flex flex-row justify-around text-lg font-bold'>
+        <ul className='w-96 space-x-6 ml-9 flex-row justify-around text-lg font-bold md:block hidden'>
           <Link href='#'>Home</Link>
           <Link href='#'>Market</Link>
           <Link href='#'>Choose Us</Link>

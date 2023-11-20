@@ -6,7 +6,7 @@ import eth from "../images/hero/ethereum.png";
 const Join = () => {
   return (
     <section className='bg-secondary'>
-      <div className='flex flex-row justify-center items-center p-24 space-x-8'>
+      <div className='flex flex-row justify-center items-center p-32 space-x-8'>
         <div>
           <Image
             src={btc}
@@ -17,11 +17,13 @@ const Join = () => {
           />
         </div>
         <div>
-          <p className='text-6xl text-white font-bold'>JOIN US VIA</p>
+          <p className='text-6xl text-white font-bold text-center'>
+            JOIN US VIA
+          </p>
           <p className='from-first to-title bg-gradient-to-r bg-clip-text text-transparent text-6xl font-bold text-center'>
             DISCORD
           </p>
-          <p className='text-white text-lg mt-4'>
+          <p className='text-white text-lg mt-4 text-center'>
             Invest and manage all your crypto at one place
           </p>
         </div>

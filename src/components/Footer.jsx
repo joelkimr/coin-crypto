@@ -6,7 +6,7 @@ import { TbBrandDiscordFilled } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    <section className='bg-secondary w-auto h-screen lg:h-auto'>
+    <section className='bg-secondary min-w-[121%] md:min-w-full h-screen lg:h-auto'>
       <div className='flex justify-center relative '>
         <Image src={Foot} className='lg:block hidden' />
         <div className='absolute space-y-4 top-64'>

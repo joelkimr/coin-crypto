@@ -4,7 +4,7 @@ import hand from "../images/chooseus/choose-main.png";
 
 const Chooseus = () => {
   return (
-    <section className='bg-secondary'>
+    <section className='bg-secondary min-w-[121%] md:min-w-full'>
       <div className='flex items-center justify-center p-12'>
         <p className='lg:text-5xl text-6xl font-bold uppercase text-white text-center'>
           Why

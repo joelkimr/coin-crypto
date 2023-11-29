@@ -35,14 +35,14 @@ const Hero = () => {
 
   return (
     <div>
-      <div className='w-full h-screen bg-gradient-to-t from-secondary to-primary'>
+      <div className='min-w-[121%] md:min-w-full h-screen bg-gradient-to-t from-secondary to-primary'>
         <Navbar />
         <div className='w-auto h-full flex flex-col items-center justify-center space-y-16 md:pt-0 pt-20'>
           <div className='flex flex-row justify-center items-center'>
             <Image
               src={btc}
-              width={80}
-              height={80}
+              width={90}
+              height={90}
               alt='floating-coin'
               className='md:block hidden'
             />
@@ -60,8 +60,8 @@ const Hero = () => {
             </div>
             <Image
               src={eth}
-              width={80}
-              height={80}
+              width={90}
+              height={90}
               alt='floating-coin'
               className='md:block hidden'
             />

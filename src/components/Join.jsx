@@ -5,7 +5,7 @@ import eth from "../images/hero/ethereum.png";
 
 const Join = () => {
   return (
-    <section className='bg-secondary'>
+    <section className='bg-secondary min-w-[121%] md:min-w-full'>
       <div className='flex flex-row justify-center items-center p-32 space-x-8'>
         <div>
           <Image

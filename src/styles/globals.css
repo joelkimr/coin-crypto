@@ -5,7 +5,7 @@ span {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: purple;
+    background-image: #ee24d9;
 }
 
 *::-webkit-scrollbar {
@@ -20,7 +20,7 @@ span {
 
 *::-webkit-scrollbar-thumb {
     border-radius: 80px;
-    background-color: #D12878;
+    background-color: #ee24d9;
     border: 1.5px solid #fff;
 }
 

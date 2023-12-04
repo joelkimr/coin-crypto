@@ -25,10 +25,6 @@ const Navbar = () => {
     });
   };
 
-  const openMobile = () => {
-    setMobile(!mobile);
-  };
-
   return (
     <>
       <nav
@@ -40,11 +36,19 @@ const Navbar = () => {
             COINCRYPTO
           </p>
         </Link>
-        <ul className='w-96 space-x-6 ml-9 flex-row justify-around text-lg font-bold md:block hidden'>
-          <Link href='#'>Home</Link>
-          <Link href='#'>Market</Link>
-          <Link href='#'>Choose Us</Link>
-          <Link href='#'>Join</Link>
+        <ul className='w-96 space-x-6 ml-9 flex-row justify-around text-xl font-bold md:block hidden'>
+          <Link href='#' className='hover:text-purple-700'>
+            Home
+          </Link>
+          <Link href='#' className='hover:text-purple-700'>
+            Market
+          </Link>
+          <Link href='#' className='hover:text-purple-700'>
+            Choose Us
+          </Link>
+          <Link href='#' className='hover:text-purple-700'>
+            Join
+          </Link>
         </ul>
         <div className='flex flex-row items-center justify-center text-xl cursor-pointer gap-x-4'>
           <IoLogoTwitter />

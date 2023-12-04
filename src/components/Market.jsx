@@ -2,7 +2,7 @@ import React from "react";
 
 const Market = () => {
   return (
-    <section className='bg-secondary xl:pl-64 lg:pl-36 md:p-5 pl-2 min-w-[121%] md:min-w-full'>
+    <section className='bg-secondary xl:pl-64 lg:pl-36 md:p-5 p-4 min-w-[121%] md:min-w-full md:pt-0 pt-28'>
       <div className='lg:w-4/5 h-auto flex flex-col space-y-8 text-white'>
         <h2 className='text-4xl font-bold'>Market Update</h2>
         <div className='w-full h-full'>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import { Spinner } from "@material-tailwind/react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 import btc from "../images/hero/bitcoin.png";
@@ -37,7 +38,7 @@ const Hero = () => {
     <div>
       <div className='min-w-[121%] md:min-w-full h-screen bg-gradient-to-t from-secondary to-primary'>
         <Navbar />
-        <div className='w-auto h-full flex flex-col items-center justify-center space-y-16 md:pt-0 pt-20'>
+        <div className='w-auto h-full flex flex-col items-center justify-center space-y-16 md:pt-0 pt-32'>
           <div className='flex flex-row justify-center items-center'>
             <Image
               src={btc}
@@ -74,7 +75,11 @@ const Hero = () => {
           <div
             onLoad={() => setCoinsLoad(false)}
             className='flex-row gap-x-28 md:block hidden'>
-            {coinsLoad && <span className='loader'></span>}
+            {coinsLoad && (
+              <span>
+                {/* <Spinner className='h-10 w-10' /> */}
+              </span>
+            )}
             {data.map((item) => (
               <Link href={`/coin/${item.id}`} key={item.id}>
                 <img

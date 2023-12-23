@@ -5,7 +5,6 @@ import Image from "next/image";
 import btc from "../images/hero/bitcoin.png";
 import eth from "../images/hero/ethereum.png";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   const [data, setData] = useState([]);
@@ -41,7 +40,7 @@ const Hero = () => {
         <Navbar />
         <div className='w-auto h-full flex flex-col items-center justify-center space-y-16 md:pt-0 pt-32'>
           <div className='flex flex-row justify-center items-center'>
-            <motion.a href='#' animate={{ y: -25 }} initial={{ y: 30 }}>
+            <a href='#'>
               <Image
                 src={btc}
                 width={90}
@@ -49,7 +48,7 @@ const Hero = () => {
                 alt='floating-coin'
                 className='md:block hidden'
               />
-            </motion.a>
+            </a>
             <div className='text-center uppercase flex flex-col'>
               <div>
                 <p className='text-white lg:text-7xl text-5xl font-bold'>

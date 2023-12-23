@@ -51,8 +51,8 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className='flex flex-row items-center justify-center text-xl cursor-pointer gap-x-4'>
-          <IoLogoTwitter />
-          <TbBrandDiscordFilled />
+          <IoLogoTwitter className='hover:text-blue-400' />
+          <TbBrandDiscordFilled className='hover:text-black/90' />
         </div>
       </nav>
     </>

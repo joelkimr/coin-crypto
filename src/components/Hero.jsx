@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { Spinner } from "@material-tailwind/react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 import btc from "../images/hero/bitcoin.png";
@@ -87,11 +86,9 @@ const Hero = () => {
                   <img
                     src={item?.image}
                     alt={item?.name || "coins"}
-                    // width={80}
-                    // height={80}
-                    className='ml-5 md:w-20 md:h-20 w-12 h-12'
+                    className='ml-5 md:w-20 md:h-20 w-16 h-16'
                   />
-                  <p className='lg:text-2xl md:text-lg text-base font-bold text-white mt-4'>
+                  <p className='lg:text-2xl md:text-lg text-sm font-bold text-white mt-4'>
                     {item?.name}
                     <span
                       className={
@@ -112,7 +109,7 @@ const Hero = () => {
               <div className='flex flex-row lg:gap-x-20 md:gap-x-14 gap-x-4'>
                 {Array.from({ length: 4 }).map((_item, i) => (
                   <div
-                    className='w-16 h-16 bg-title/50 animate-pulse rounded-full'
+                    className='w-10 h-10 bg-title/25 animate-bounce rounded-full'
                     key={i}
                   />
                 ))}

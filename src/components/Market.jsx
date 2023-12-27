@@ -22,7 +22,6 @@ const Market = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(url);
-      console.log(response);
       if (!response.ok) {
         throw new Error("Error!");
       }
@@ -30,8 +29,6 @@ const Market = () => {
       setData(json);
     } catch (e) {}
   };
-
-  console.log(data);
 
   const paginationButtons = [];
   for (let i = 1; i <= 5; i++) {
@@ -50,65 +47,74 @@ const Market = () => {
       <div className='lg:w-4/5 h-auto flex flex-col space-y-8 text-white'>
         <h2 className='text-4xl font-bold'>Market Update</h2>
         <div className='w-full h-full overflow-x-auto'>
-          <table className='w-full h-full table-auto'>
-            <thead className='w-full min-w-fit text-2xl bg-gradient-to-r from-first to-title rounded-lg'>
-              <tr className='w-full font-bold min-w-fit'>
-                <td className='min-w-fit text-left p-4 lg:text-xl text-sm'>
-                  Coin
-                </td>
-                <td className='min-w-fit pb-2  lg:text-xl text-sm px-2'>
-                  Price
-                </td>
-                <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
-                  24h Change
-                </td>
-                <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
-                  Market Cap
-                </td>
-              </tr>
-            </thead>
-            <tbody className='w-full'>
-              {data.map((item) => (
-                <tr
-                  onLoad={() => setApiLoad(false)}
-                  className='border-b border-white/50'>
-                  {/* <td> */}
-                  {/* <Link
-                      onClick={scrollTop}
-                      href='#'
-                      className='flex flex-row'
-                      key={item.id}> */}
-                  <td className='flex justify-start items-center space-x-2 p-4 w-40'>
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className='w-16 h-16'
-                    />
-                    <span className='text-white'>{item.name}</span>
+          {data.length > 0 ? (
+            <table className='w-full h-full table-auto'>
+              <thead className='w-full min-w-fit text-2xl bg-gradient-to-r from-first to-title rounded-lg'>
+                <tr className='w-full font-bold min-w-fit'>
+                  <td className='min-w-fit text-left p-4 lg:text-xl text-sm'>
+                    Coin
                   </td>
-                  <td>
-                    <p>{"$ " + item.current_price.toFixed(2)}</p>
+                  <td className='min-w-fit pb-2  lg:text-xl text-sm px-2'>
+                    Price
                   </td>
-                  <td>
-                    <p
-                      className={
-                        "" +
-                        (item.price_change_percentage_24h >= 0
-                          ? "green-text"
-                          : "red-text")
-                      }>
-                      {item.price_change_percentage_24h?.toFixed(2) + " %"}
-                    </p>
+                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
+                    24h Change
                   </td>
-                  <td>
-                    <p>{"$ " + numberWithCommas(item.market_cap)}</p>
+                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
+                    Market Cap
                   </td>
-                  {/* </Link> */}
-                  {/* </td> */}
                 </tr>
+              </thead>
+              <tbody className='w-full'>
+                {data.map((item) => (
+                  <tr
+                    onLoad={() => setApiLoad(false)}
+                    className='border-b border-white/50'>
+                    <td className='flex justify-start items-center space-x-2 p-4 w-40'>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className='w-16 h-16'
+                      />
+                      <span className='text-white md:font-bold md:text-2xl'>
+                        {item.name}
+                      </span>
+                    </td>
+                    <td>
+                      <p className='md:font-bold md:text-2xl'>
+                        {"$ " + item.current_price.toFixed(2)}
+                      </p>
+                    </td>
+                    <td>
+                      <p
+                        className={
+                          "" +
+                          (item.price_change_percentage_24h >= 0
+                            ? "text-red md:font-bold md:text-2xl"
+                            : "text-green md:font-bold md:text-2xl")
+                        }>
+                        {item.price_change_percentage_24h?.toFixed(2) + " %"}
+                      </p>
+                    </td>
+                    <td>
+                      <p className='md:font-bold md:text-2xl'>
+                        {"$ " + numberWithCommas(item.market_cap)}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <div className='w-full justify-center flex flex-row lg:gap-x-20 md:gap-x-14 gap-x-4 mt-9'>
+              {Array.from({ length: 4 }).map((_item, i) => (
+                <div
+                  className='w-10 h-10 bg-title/25 animate-bounce rounded-full'
+                  key={i}
+                />
               ))}
-            </tbody>
-          </table>
+            </div>
+          )}
         </div>
       </div>
     </section>

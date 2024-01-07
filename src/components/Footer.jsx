@@ -6,11 +6,11 @@ import { TbBrandDiscordFilled } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    <section className='bg-secondary min-w-[121%] md:min-w-full h-screen lg:h-auto'>
+    <section className='bg-secondary min-w-[121%] md:min-w-full md:h-screen lg:h-auto h-56'>
       <div className='flex justify-center relative '>
         <Image src={Foot} className='lg:block hidden' />
-        <div className='absolute space-y-4 top-64'>
-          <div className='flex flex-row space-x-9 text-white justify-center text-4xl'>
+        <div className='absolute space-y-4 md:top-64 top-28'>
+          <div className='flex flex-row space-x-9 text-white justify-center md:text-4xl text-2xl'>
             <div>
               <IoLogoTwitter />
             </div>

@@ -5,7 +5,7 @@ import eth from "../images/hero/ethereum.png";
 
 const Join = () => {
   return (
-    <section className='bg-secondary min-w-[121%] md:min-w-full'>
+    <section className='bg-secondary min-w-[121%] md:min-w-full -mb-1'>
       <div className='flex flex-row justify-center items-center p-32 space-x-8'>
         <div>
           <Image
@@ -17,10 +17,10 @@ const Join = () => {
           />
         </div>
         <div>
-          <p className='text-6xl text-white font-bold text-center'>
+          <p className='md:text-6xl text-4xl text-white font-bold text-center'>
             JOIN US VIA
           </p>
-          <p className='from-first to-title bg-gradient-to-r bg-clip-text text-transparent text-6xl font-bold text-center'>
+          <p className='from-first to-title bg-gradient-to-r bg-clip-text text-transparent md:text-6xl text-4xl font-bold text-center'>
             DISCORD
           </p>
           <p className='text-white text-lg mt-4 text-center'>
@@ -38,9 +38,7 @@ const Join = () => {
         </div>
       </div>
       <div className='text-center'>
-        <button
-          href='#'
-          className='w-56 h-14 text-center pt-2 text-xl bg-gradient-to-r from-first to-title text-white rounded-full transition font-semibold'>
+        <button className='w-56 h-14 text-center text-xl bg-gradient-to-r from-first to-title text-white rounded-full transition font-semibold'>
           Join via Discord
         </button>
       </div>

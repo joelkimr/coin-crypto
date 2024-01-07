@@ -43,7 +43,7 @@ const Market = () => {
   }
 
   return (
-    <section className='bg-secondary xl:pl-64 lg:pl-36 md:p-5 p-4 min-w-[121%] md:min-w-full md:pt-0 pt-44'>
+    <section className='bg-secondary xl:pl-64 lg:pl-36 md:p-5 p-4 min-w-[121%] md:min-w-full md:pt-0 pt-44 -mb-1'>
       <div className='lg:w-4/5 h-auto flex flex-col space-y-8 text-white'>
         <h2 className='text-4xl font-bold'>Market Update</h2>
         <div className='w-full h-full overflow-x-auto'>
@@ -51,16 +51,16 @@ const Market = () => {
             <table className='w-full h-full table-auto'>
               <thead className='w-full min-w-fit text-2xl bg-gradient-to-r from-first to-title rounded-lg'>
                 <tr className='w-full font-bold min-w-fit'>
-                  <td className='min-w-fit text-left p-4 lg:text-xl text-sm'>
+                  <td className='min-w-fit text-left p-4 lg:text-xl text-sm '>
                     Coin
                   </td>
-                  <td className='min-w-fit pb-2  lg:text-xl text-sm px-2'>
+                  <td className='min-w-fit pb-2  lg:text-xl text-sm px-2 text-center'>
                     Price
                   </td>
-                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
+                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2 text-center'>
                     24h Change
                   </td>
-                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2'>
+                  <td className='min-w-fit pb-2 lg:text-xl text-sm px-2 text-center'>
                     Market Cap
                   </td>
                 </tr>
@@ -74,15 +74,15 @@ const Market = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className='w-16 h-16'
+                        className='w-10 h-10 md:w-16 md:h-16'
                       />
                       <span className='text-white md:font-bold md:text-2xl'>
                         {item.name}
                       </span>
                     </td>
                     <td>
-                      <p className='md:font-bold md:text-2xl'>
-                        {"$ " + item.current_price.toFixed(2)}
+                      <p className='md:font-bold md:text-2xl text-sm text-center'>
+                        {"$" + item.current_price.toFixed(2)}
                       </p>
                     </td>
                     <td>
@@ -90,15 +90,15 @@ const Market = () => {
                         className={
                           "" +
                           (item.price_change_percentage_24h >= 0
-                            ? "text-red md:font-bold md:text-2xl"
-                            : "text-green md:font-bold md:text-2xl")
+                            ? "text-red md:font-bold md:text-2xl text-sm text-center"
+                            : "text-green md:font-bold md:text-2xl text-sm text-center")
                         }>
                         {item.price_change_percentage_24h?.toFixed(2) + " %"}
                       </p>
                     </td>
                     <td>
-                      <p className='md:font-bold md:text-2xl'>
-                        {"$ " + numberWithCommas(item.market_cap)}
+                      <p className='md:font-bold md:text-2xl text-sm text-center'>
+                        {"$" + numberWithCommas(item.market_cap)}
                       </p>
                     </td>
                   </tr>
@@ -109,7 +109,7 @@ const Market = () => {
             <div className='w-full justify-center flex flex-row lg:gap-x-20 md:gap-x-14 gap-x-4 mt-9'>
               {Array.from({ length: 4 }).map((_item, i) => (
                 <div
-                  className='w-10 h-10 bg-title/25 animate-bounce rounded-full'
+                  className='w-10 h-10 bg-title/25 animate-pulse rounded-full'
                   key={i}
                 />
               ))}
